@@ -1,4 +1,3 @@
-# STII-code
 # Function to read input file
 import numpy as np
 def read_input(filename):
@@ -131,7 +130,6 @@ for ielem in range(nels):
     q = np.array([*nodaldisps[inode], *nodaldisps[jnode]])
     memberforce= kt_list[ielem]@q
     memberforces[ielem,0]=memberforce[2]
-print(memberforces)
 # Display results
 print("\nNodal Displacements:")
 for i in range(nnodes):
@@ -140,3 +138,6 @@ for i in range(nnodes):
 print("\nNodal Forces:")
 for i in range(nnodes):
     print(nodalforces[i])
+print("\nMemberforces:")
+for i in range(nels):
+    print(memberforces[i])
